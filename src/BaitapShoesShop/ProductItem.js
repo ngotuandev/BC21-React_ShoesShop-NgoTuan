@@ -9,7 +9,12 @@ export default class ProductItem extends Component {
           className="card-img-top"
           src={image}
           alt=""
+          data-toggle="modal"
+          data-target="#exampleModal"
           style={{ cursor: "pointer" }}
+          onClick={() => {
+            this.props.setStateModal(this.props.item);
+          }}
         />
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
@@ -22,16 +27,6 @@ export default class ProductItem extends Component {
               }}
             >
               Add to carts <i className="fa-solid fa-cart-shopping"></i>
-            </button>
-            <button
-              className="btn btn-secondary col-4"
-              data-toggle="modal"
-              data-target="#exampleModal"
-              onClick={() => {
-                this.props.setStateModal(this.props.item);
-              }}
-            >
-              Detail
             </button>
           </div>
         </div>
